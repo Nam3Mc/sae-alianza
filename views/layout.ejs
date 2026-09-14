@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#6d28d9">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Corporación SAE Crecer en Bienestar — Fortalecemos el bienestar emocional, mental y social de personas, familias y comunidades en Colombia.">
+  <meta name="keywords" content="bienestar emocional, salud mental, ONG Colombia, acompañamiento psicosocial, autocuidado, coocuidado">
+  <title><%= title %> | SAE Crecer en Bienestar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Skip link de accesibilidad -->
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Overlay del menú móvil -->
+  <div class="header__overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="/" class="header__logo" aria-label="SAE Crecer en Bienestar — Inicio">
+        <span class="header__logo-icon" aria-hidden="true">🌱</span>
+        <span class="header__logo-text">
+          SAE
+          <small>Crecer en Bienestar</small>
+        </span>
+      </a>
+
+      <nav class="header__nav" id="navMenu" aria-label="Navegación principal">
+        <a href="/" class="nav__link <%= paginaActiva === 'inicio' ? 'active' : '' %>" <%= paginaActiva === 'inicio' ? 'aria-current="page"' : '' %>>Inicio</a>
+        <a href="/quienes-somos" class="nav__link <%= paginaActiva === 'quienes-somos' ? 'active' : '' %>" <%= paginaActiva === 'quienes-somos' ? 'aria-current="page"' : '' %>>Quiénes Somos</a>
+        <a href="/que-hacemos" class="nav__link <%= paginaActiva === 'que-hacemos' ? 'active' : '' %>" <%= paginaActiva === 'que-hacemos' ? 'aria-current="page"' : '' %>>Qué Hacemos</a>
+        <a href="/programas" class="nav__link <%= paginaActiva === 'programas' ? 'active' : '' %>" <%= paginaActiva === 'programas' ? 'aria-current="page"' : '' %>>Programas</a>
+        <a href="/transparencia" class="nav__link <%= paginaActiva === 'transparencia' ? 'active' : '' %>" <%= paginaActiva === 'transparencia' ? 'aria-current="page"' : '' %>>Transparencia</a>
+        <a href="/alianzas" class="nav__link <%= paginaActiva === 'alianzas' ? 'active' : '' %>" <%= paginaActiva === 'alianzas' ? 'aria-current="page"' : '' %>>Alianzas</a>
+        <a href="/participa" class="nav__link nav__link--cta <%= paginaActiva === 'participa' ? 'active' : '' %>" <%= paginaActiva === 'participa' ? 'aria-current="page"' : '' %>>Participa</a>
+        <a href="/contacto" class="nav__link <%= paginaActiva === 'contacto' ? 'active' : '' %>" <%= paginaActiva === 'contacto' ? 'aria-current="page"' : '' %>>Contáctanos</a>
+      </nav>
+
+      <button class="header__toggle"
+              id="menuToggle"
+              type="button"
+              aria-label="Abrir menú de navegación"
+              aria-controls="navMenu"
+              aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <%- body %>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="footer__logo">🌱 SAE Crecer en Bienestar</span>
+        <p class="footer__slogan"><%= datos.eslogan %></p>
+        <p class="footer__esal"><%= datos.naturalezaJuridica %> · Constituida en <%= datos.anioConstitucion %></p>
+      </div>
+      <nav class="footer__links" aria-label="Navegación del pie">
+        <h4>Navegación</h4>
+        <a href="/">Inicio</a>
+        <a href="/quienes-somos">Quiénes Somos</a>
+        <a href="/programas">Programas</a>
+        <a href="/transparencia">Transparencia</a>
+      </nav>
+      <nav class="footer__links" aria-label="Enlaces de participación">
+        <h4>Únete</h4>
+        <a href="/alianzas">Alianzas</a>
+        <a href="/participa">Participa</a>
+        <a href="/contacto">Contáctanos</a>
+      </nav>
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <p>📍 <%= datos.ciudad %></p>
+        <p>✉️ <a href="mailto:<%= datos.correo %>"><%= datos.correo %></a></p>
+        <p>📱 <a href="https://wa.me/57<%= datos.whatsapp %>" target="_blank" rel="noopener noreferrer">WhatsApp: <%= datos.whatsapp %></a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; <%= new Date().getFullYear() %> Corporación SAE Crecer en Bienestar. Todos los derechos reservados.</p>
+        <p class="footer__legal">Entidad Sin Ánimo de Lucro – ESAL · Bogotá D.C., Colombia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<section class="page-header">
+  <div class="container">
+    <h1>Programas</h1>
+    <p>Iniciativas que crecen contigo</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cards-grid cards-grid--2">
+      <% datos.programas.forEach(function(prog, i) { %>
+        <div class="card card--programa-full">
+          <span class="card__num">0<%= i + 1 %></span>
+          <h3><%= prog.nombre %></h3>
+          <p><%= prog.descripcion %></p>
+          <a href="/participa" class="btn btn--small btn--primary">Solicitar información</a>
+        </div>
+      <% }); %>
+    </div>
+    <p class="nota mt-2"><em>Nota: Programas en proceso de implementación y articulación territorial.</em></p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta__content">
+    <h2>¿Te gustaría que llevemos nuestros programas a tu comunidad?</h2>
+    <p>Contáctanos y construyamos juntos una propuesta a tu medida.</p>
+    <a href="/contacto" class="btn btn--white">Contáctanos</a>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<section class="page-header">
+  <div class="container">
+    <h1>Quiénes Somos</h1>
+    <p>Conoce nuestra esencia, principios y valores</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-item"><strong>Nombre completo:</strong> <%= datos.nombre %></div>
+      <div class="info-item"><strong>Naturaleza jurídica:</strong> <%= datos.naturalezaJuridica %></div>
+      <div class="info-item"><strong>Año de constitución:</strong> <%= datos.anioConstitucion %></div>
+      <div class="info-item"><strong>Ciudad / territorio:</strong> <%= datos.ciudad %></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <h2 class="section__title">Objeto social</h2>
+    <p class="section__text center">
+      La Corporación SAE Crecer en Bienestar tiene como objeto social el diseño, implementación, ejecución y evaluación 
+      de programas, proyectos, estrategias y servicios orientados al fortalecimiento del bienestar emocional, mental y social 
+      de la población en general, en los ámbitos familiar, comunitario, empresarial e institucional.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Principios institucionales</h2>
+    <div class="cards-grid cards-grid--3">
+      <% datos.principios.forEach(function(p) { %>
+        <div class="card card--principio">
+          <span class="card__icon"><%= p.icono %></span>
+          <h3><%= p.titulo %></h3>
+          <p><%= p.descripcion %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <h2 class="section__title">Valores institucionales</h2>
+    <div class="cards-grid cards-grid--3">
+      <% datos.valores.forEach(function(v) { %>
+        <div class="card card--valor">
+          <span class="card__icon"><%= v.icono %></span>
+          <h3><%= v.nombre %></h3>
+          <p><%= v.descripcion %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="mision-vision">
+      <div class="mv-card">
+        <h3>🎯 Misión</h3>
+        <p><%= datos.mision %></p>
+      </div>
+      <div class="mv-card">
+        <h3>🔭 Visión</h3>
+        <p><%= datos.vision %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <h2 class="section__title">Enfoques de trabajo</h2>
+    <p class="section__text center">
+      SAE Crecer en Bienestar desarrolla sus acciones desde un enfoque psicosocial, preventivo y humanizado, 
+      centrado en la persona, reconociendo sus contextos, experiencias y potencialidades. Promovemos el bienestar 
+      como un proceso continuo que se construye con conciencia, herramientas prácticas y acompañamiento profesional, 
+      fomentando la autonomía, la resiliencia y el fortalecimiento de vínculos saludables.
+    </p>
+  </div>
+</section>

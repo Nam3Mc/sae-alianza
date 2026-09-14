@@ -1,0 +1,39 @@
+<section class="page-header">
+  <div class="container">
+    <h1>Contáctanos</h1>
+    <p>Estamos listos para escucharte</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-card">
+        <span class="contacto__icon">📍</span>
+        <h3>Ubicación</h3>
+        <p><%= datos.ciudad %></p>
+      </div>
+      <div class="contacto-card">
+        <span class="contacto__icon">✉️</span>
+        <h3>Correo</h3>
+        <p><a href="mailto:<%= datos.correo %>"><%= datos.correo %></a></p>
+      </div>
+      <div class="contacto-card">
+        <span class="contacto__icon">📱</span>
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/57<%= datos.whatsapp %>" target="_blank" rel="noopener"><%= datos.whatsapp %></a></p>
+      </div>
+      <div class="contacto-card">
+        <span class="contacto__icon">📸</span>
+        <h3>Instagram</h3>
+        <p><a href="<%= datos.instagram %>" target="_blank" rel="noopener">@saecrecer</a></p>
+      </div>
+    </div>
+
+    <div class="horario">
+      <h3>🕐 Horario de atención</h3>
+      <p>Lunes a viernes: 8:00 a.m. – 5:00 p.m.</p>
+      <p>Respuesta a solicitudes en un máximo de 48 horas hábiles.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+<section class="page-header">
+  <div class="container">
+    <h1>Participa / Solicita Acompañamiento</h1>
+    <p>¿Quieres hacer parte de SAE? Estamos aquí para ti</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container form-container">
+    <form action="#" method="POST" class="form" id="formParticipa">
+      <div class="form__row">
+        <div class="form__group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+        </div>
+        <div class="form__group">
+          <label for="organizacion">Organización / comunidad</label>
+          <input type="text" id="organizacion" name="organizacion" placeholder="Nombre de tu organización o comunidad">
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="form__group">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="form__group">
+          <label for="telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="form__group">
+          <label for="ciudad">Ciudad / localidad</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Bogotá, Suba">
+        </div>
+        <div class="form__group">
+          <label for="necesidad">¿Qué necesitas? *</label>
+          <select id="necesidad" name="necesidad" required>
+            <option value="">Selecciona una opción</option>
+            <option value="acompañamiento-psicosocial">Acompañamiento psicosocial</option>
+            <option value="talleres-formacion">Talleres y formación</option>
+            <option value="programa-juvenil">Programa juvenil</option>
+            <option value="programa-familiar">Programa familiar</option>
+            <option value="programa-comunitario">Programa comunitario</option>
+            <option value="programa-educativo">Programa educativo</option>
+            <option value="voluntariado">Voluntariado</option>
+            <option value="alianza">Alianza estratégica</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form__group">
+        <label for="mensaje">Cuéntanos más sobre tu necesidad</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente lo que necesitas..."></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full">Enviar solicitud</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "name": "sae-crecer-bienestar",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Corporación SAE Crecer en Bienestar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["ong", "bienestar", "psicosocial", "colombia", "esal"],
+  "author": "Corporación SAE Crecer en Bienestar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "express-ejs-layouts": "^2.5.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

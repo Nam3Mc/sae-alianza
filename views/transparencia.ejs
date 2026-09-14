@@ -1,0 +1,35 @@
+<section class="page-header">
+  <div class="container">
+    <h1>Transparencia y Gestión Institucional</h1>
+    <p>Nuestro compromiso con la rendición de cuentas</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="transparencia-grid">
+      <% const documentos = [
+        'Certificado de existencia y representación legal',
+        'Estatutos',
+        'Informes de gestión',
+        'Programas y proyectos',
+        'Información financiera que legalmente corresponda publicar',
+        'Políticas institucionales',
+        'Canales de contacto',
+        'Informes y resultados'
+      ]; %>
+      <% documentos.forEach(function(doc) { %>
+        <div class="transparencia-item">
+          <span class="transparencia__icon">📄</span>
+          <span class="transparencia__nombre"><%= doc %></span>
+          <span class="transparencia__estado">Disponible bajo solicitud</span>
+        </div>
+      <% }); %>
+    </div>
+    <p class="section__text center mt-2">
+      Para solicitar cualquiera de estos documentos, escríbenos a 
+      <a href="mailto:<%= datos.correo %>"><%= datos.correo %></a> 
+      o a nuestro WhatsApp <strong><%= datos.whatsapp %></strong>.
+    </p>
+  </div>
+</section>
