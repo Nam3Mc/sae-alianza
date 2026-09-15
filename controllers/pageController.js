@@ -1,7 +1,7 @@
 // Datos de la organización (Modelo de datos centralizado)
 const datosONG = {
   nombre: 'Corporación SAE Crecer en Bienestar',
-  eslogan: 'Acompañamos tu crecimiento, cultivamos tu bienestar, me cuido, te cuido, nos cuidamos.',
+  eslogan: 'me cuido, te cuido, nos cuidamos.',
   naturalezaJuridica: 'Entidad Sin Ánimo de Lucro – ESAL',
   anioConstitucion: 2026,
   ciudad: 'Bogotá D.C., Cundinamarca, Colombia',
