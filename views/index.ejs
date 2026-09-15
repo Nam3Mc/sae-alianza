@@ -1,8 +1,12 @@
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 <section class="hero">
-  <div class="hero__overlay"></div>
   <div class="container hero__content">
-    <h1 class="hero__title">Acompañamos tu crecimiento,<br><span>cultivamos tu bienestar</span></h1>
+    <h1 class="hero__title">
+      Acompañamos tu crecimiento,<br>
+      <span>cultivamos tu bienestar</span>
+    </h1>
     <p class="hero__slogan"><%= datos.eslogan %></p>
     <div class="hero__actions">
       <a href="/participa" class="btn btn--primary">Haz parte de SAE</a>
@@ -11,90 +15,107 @@
   </div>
 </section>
 
-<!-- QUIÉNES SOMOS RESUMEN -->
+<!-- =========================================================
+     QUIÉNES SOMOS — RESUMEN
+     ========================================================= -->
 <section class="section section--light">
   <div class="container">
-    <div class="section__header">
+    <header class="section__header">
       <span class="section__tag">¿Quiénes somos?</span>
       <h2 class="section__title">Una organización que cree en las capacidades de las personas</h2>
-    </div>
+    </header>
+
     <p class="section__text center">
-      Corporación SAE Crecer en Bienestar es una entidad sin ánimo de lucro que trabaja por el fortalecimiento 
-      del bienestar emocional, mental y social de las personas, familias y comunidades. Desarrollamos procesos de 
+      Corporación SAE Crecer en Bienestar es una entidad sin ánimo de lucro que trabaja por el fortalecimiento
+      del bienestar emocional, mental y social de las personas, familias y comunidades. Desarrollamos procesos de
       promoción, prevención, formación, acompañamiento y fortalecimiento de capacidades.
     </p>
-    <div class="cards-grid cards-grid--3">
-      <div class="card card--icon">
-        <span class="card__icon">💜</span>
+
+    <div class="cards-grid cards-grid--3 mt-2">
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">🌿</span>
         <h3>Bienestar integral</h3>
         <p>Promovemos el equilibrio emocional, mental, social, familiar y comunitario.</p>
-      </div>
-      <div class="card card--icon">
-        <span class="card__icon">🌿</span>
+      </article>
+
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">🤝</span>
         <h3>Autocuidado y coocuidado</h3>
         <p>Fomentamos el cuidado de sí mismo, de los demás y de los entornos que compartimos.</p>
-      </div>
-      <div class="card card--icon">
-        <span class="card__icon">🤝</span>
+      </article>
+
+      <article class="card">
+        <span class="card__icon" aria-hidden="true">🌱</span>
         <h3>Construcción conjunta</h3>
         <p>Creemos que las soluciones sostenibles se construyen con las personas y comunidades.</p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- PROGRAMAS DESTACADOS -->
+<!-- =========================================================
+     PROGRAMAS DESTACADOS
+     ========================================================= -->
 <section class="section">
   <div class="container">
-    <div class="section__header">
+    <header class="section__header">
       <span class="section__tag">Nuestros programas</span>
       <h2 class="section__title">Programas que transforman vidas</h2>
-    </div>
+    </header>
+
     <div class="cards-grid cards-grid--2">
-      <% datos.programas.forEach(function(prog) { %>
-        <div class="card card--programa">
+      <% datos.programas.forEach(function(prog, i) { %>
+        <article class="card card--programa card--programa-full">
+          <span class="card__num" aria-hidden="true"><%= String(i + 1).padStart(2, '0') %></span>
           <h3><%= prog.nombre %></h3>
           <p><%= prog.descripcion %></p>
-        </div>
+        </article>
       <% }); %>
     </div>
+
     <div class="center mt-2">
       <a href="/programas" class="btn btn--primary">Ver todos los programas</a>
     </div>
-    <p class="nota"><em>Nota: Programas en proceso de implementación y articulación territorial.</em></p>
+
+    <p class="nota">Programas en proceso de implementación y articulación territorial.</p>
   </div>
 </section>
 
-<!-- METODOLOGÍA -->
+<!-- =========================================================
+     METODOLOGÍA
+     ========================================================= -->
 <section class="section section--dark">
   <div class="container">
-    <div class="section__header">
+    <header class="section__header">
       <span class="section__tag">¿Cómo trabajamos?</span>
       <h2 class="section__title">Nuestra metodología participativa</h2>
       <p class="section__text">Las soluciones sostenibles se construyen con las personas y comunidades.</p>
-    </div>
+    </header>
+
     <div class="metodologia">
       <% datos.metodologia.forEach(function(paso, i) { %>
         <div class="metodologia__step">
-          <span class="metodologia__num"><%= i + 1 %></span>
+          <span class="metodologia__num" aria-hidden="true"><%= i + 1 %></span>
           <span class="metodologia__nombre"><%= paso %></span>
         </div>
         <% if (i < datos.metodologia.length - 1) { %>
-          <span class="metodologia__arrow">→</span>
+          <span class="metodologia__arrow" aria-hidden="true">→</span>
         <% } %>
       <% }); %>
     </div>
   </div>
 </section>
 
-<!-- CTA PARTICIPA -->
+<!-- =========================================================
+     CTA — PARTICIPA
+     ========================================================= -->
 <section class="cta">
-  <div class="container cta__content">
+  <div class="container">
     <h2>¿Quieres hacer parte de SAE?</h2>
     <p>Juntos podemos fortalecer el bienestar de más personas, familias y comunidades.</p>
     <div class="cta__actions">
       <a href="/participa" class="btn btn--white">Quiero participar</a>
-      <a href="/contacto" class="btn btn--outline-light">Contáctanos</a>
+      <a href="/contacto" class="btn btn--outline">Contáctanos</a>
     </div>
   </div>
 </section>

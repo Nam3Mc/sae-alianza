@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Qué Hacemos</h1>
@@ -5,41 +8,78 @@
   </div>
 </section>
 
+<!-- =========================================================
+     LÍNEAS DE ACCIÓN
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Líneas de acción</span>
+      <h2 class="section__title">Tres caminos para fortalecer el bienestar</h2>
+      <p class="section__text">
+        Trabajamos de manera articulada en tres líneas complementarias que se adaptan
+        al contexto de cada persona, familia y comunidad.
+      </p>
+    </header>
+
     <div class="cards-grid cards-grid--3">
-      <div class="card card--accion">
-        <span class="card__icon">💜</span>
+      <article class="card card--accion">
+        <span class="card__icon" aria-hidden="true">🌿</span>
         <h3>Bienestar y desarrollo social</h3>
-        <p>Promoción del bienestar emocional, mental y social, fortalecimiento de capacidades, acompañamiento psicosocial, prevención y construcción de redes de apoyo.</p>
-      </div>
-      <div class="card card--accion">
-        <span class="card__icon">📚</span>
+        <p>
+          Promoción del bienestar emocional, mental y social, fortalecimiento de capacidades,
+          acompañamiento psicosocial, prevención y construcción de redes de apoyo.
+        </p>
+      </article>
+
+      <article class="card card--accion">
+        <span class="card__icon" aria-hidden="true">📚</span>
         <h3>Educación y formación</h3>
-        <p>Brindamos acompañamiento mediante encuentros, charlas, cursos de formación sobre bienestar, habilidades para la vida, autocuidado, coocuidado, convivencia y relaciones saludables.</p>
-      </div>
-      <div class="card card--accion">
-        <span class="card__icon">🏛️</span>
+        <p>
+          Brindamos acompañamiento mediante encuentros, charlas, cursos de formación sobre
+          bienestar, habilidades para la vida, autocuidado, coocuidado, convivencia y
+          relaciones saludables.
+        </p>
+      </article>
+
+      <article class="card card--accion">
+        <span class="card__icon" aria-hidden="true">🏛️</span>
         <h3>Fortalecimiento institucional y comunitario</h3>
-        <p>Acompañamiento a instituciones educativas, organizaciones y comunidades para identificar necesidades, construir propuestas participativas, formar multiplicadores y dejar capacidad instalada.</p>
-      </div>
+        <p>
+          Acompañamiento a instituciones educativas, organizaciones y comunidades para
+          identificar necesidades, construir propuestas participativas, formar multiplicadores
+          y dejar capacidad instalada.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- =========================================================
+     METODOLOGÍA
+     ========================================================= -->
 <section class="section section--light">
   <div class="container">
-    <h2 class="section__title">Nuestra metodología</h2>
+    <header class="section__header">
+      <span class="section__tag">¿Cómo trabajamos?</span>
+      <h2 class="section__title">Nuestra metodología</h2>
+      <p class="section__text">
+        Un proceso participativo en cinco momentos que reconoce los saberes
+        y recursos existentes en cada comunidad.
+      </p>
+    </header>
+
     <div class="metodologia metodologia--vertical">
       <% datos.metodologia.forEach(function(paso, i) { %>
         <div class="metodologia__step-v">
-          <span class="metodologia__num"><%= i + 1 %></span>
+          <span class="metodologia__num" aria-hidden="true"><%= i + 1 %></span>
           <span class="metodologia__nombre"><%= paso %></span>
         </div>
       <% }); %>
     </div>
+
     <p class="section__text center mt-2">
-      En SAE creemos que las soluciones sostenibles se construyen con las personas y comunidades, 
+      En SAE creemos que las soluciones sostenibles se construyen con las personas y comunidades,
       reconociendo sus experiencias, conocimientos, capacidades y recursos existentes.
     </p>
   </div>

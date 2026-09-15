@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Programas</h1>
@@ -5,26 +8,51 @@
   </div>
 </section>
 
+<!-- =========================================================
+     LISTADO DE PROGRAMAS
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Nuestros programas</span>
+      <h2 class="section__title">Programas que transforman vidas</h2>
+      <p class="section__text">
+        Cada programa se diseña con enfoque territorial y participativo, adaptándose a las
+        necesidades de las personas, familias y comunidades con las que trabajamos.
+      </p>
+    </header>
+
     <div class="cards-grid cards-grid--2">
       <% datos.programas.forEach(function(prog, i) { %>
-        <div class="card card--programa-full">
-          <span class="card__num">0<%= i + 1 %></span>
+        <article class="card card--programa card--programa-full">
+          <span class="card__num" aria-hidden="true">
+            <%= String(i + 1).padStart(2, '0') %>
+          </span>
           <h3><%= prog.nombre %></h3>
           <p><%= prog.descripcion %></p>
-          <a href="/participa" class="btn btn--small btn--primary">Solicitar información</a>
-        </div>
+          <a href="/participa" class="btn btn--small btn--primary">
+            Solicitar información
+          </a>
+        </article>
       <% }); %>
     </div>
-    <p class="nota mt-2"><em>Nota: Programas en proceso de implementación y articulación territorial.</em></p>
+
+    <p class="nota mt-2">
+      Programas en proceso de implementación y articulación territorial.
+    </p>
   </div>
 </section>
 
+<!-- =========================================================
+     CTA — LLEVAR PROGRAMAS A TU COMUNIDAD
+     ========================================================= -->
 <section class="cta">
-  <div class="container cta__content">
+  <div class="container">
     <h2>¿Te gustaría que llevemos nuestros programas a tu comunidad?</h2>
     <p>Contáctanos y construyamos juntos una propuesta a tu medida.</p>
-    <a href="/contacto" class="btn btn--white">Contáctanos</a>
+    <div class="cta__actions">
+      <a href="/contacto" class="btn btn--white">Contáctanos</a>
+      <a href="/participa" class="btn btn--outline">Solicitar acompañamiento</a>
+    </div>
   </div>
 </section>

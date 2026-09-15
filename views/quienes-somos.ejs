@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Quiénes Somos</h1>
@@ -5,81 +8,158 @@
   </div>
 </section>
 
+<!-- =========================================================
+     DATOS INSTITUCIONALES
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Información general</span>
+      <h2 class="section__title">Datos de la corporación</h2>
+      <p class="section__text">
+        Información pública de nuestra constitución como entidad sin ánimo de lucro.
+      </p>
+    </header>
+
     <div class="info-grid">
-      <div class="info-item"><strong>Nombre completo:</strong> <%= datos.nombre %></div>
-      <div class="info-item"><strong>Naturaleza jurídica:</strong> <%= datos.naturalezaJuridica %></div>
-      <div class="info-item"><strong>Año de constitución:</strong> <%= datos.anioConstitucion %></div>
-      <div class="info-item"><strong>Ciudad / territorio:</strong> <%= datos.ciudad %></div>
+      <div class="info-item">
+        <strong>Nombre completo</strong>
+        <%= datos.nombre %>
+      </div>
+      <div class="info-item">
+        <strong>Naturaleza jurídica</strong>
+        <%= datos.naturalezaJuridica %>
+      </div>
+      <div class="info-item">
+        <strong>Año de constitución</strong>
+        <%= datos.anioConstitucion %>
+      </div>
+      <div class="info-item">
+        <strong>Ciudad / territorio</strong>
+        <%= datos.ciudad %>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- =========================================================
+     OBJETO SOCIAL
+     ========================================================= -->
 <section class="section section--light">
   <div class="container">
-    <h2 class="section__title">Objeto social</h2>
+    <header class="section__header">
+      <span class="section__tag">Nuestra razón de ser</span>
+      <h2 class="section__title">Objeto social</h2>
+    </header>
+
     <p class="section__text center">
-      La Corporación SAE Crecer en Bienestar tiene como objeto social el diseño, implementación, ejecución y evaluación 
-      de programas, proyectos, estrategias y servicios orientados al fortalecimiento del bienestar emocional, mental y social 
-      de la población en general, en los ámbitos familiar, comunitario, empresarial e institucional.
+      La Corporación SAE Crecer en Bienestar tiene como objeto social el diseño,
+      implementación, ejecución y evaluación de programas, proyectos, estrategias y servicios
+      orientados al fortalecimiento del bienestar emocional, mental y social de la población
+      en general, en los ámbitos familiar, comunitario, empresarial e institucional.
     </p>
   </div>
 </section>
 
+<!-- =========================================================
+     PRINCIPIOS INSTITUCIONALES
+     ========================================================= -->
 <section class="section">
   <div class="container">
-    <h2 class="section__title">Principios institucionales</h2>
+    <header class="section__header">
+      <span class="section__tag">Nuestros principios</span>
+      <h2 class="section__title">Principios institucionales</h2>
+      <p class="section__text">
+        Los pilares que orientan cada una de nuestras acciones y decisiones.
+      </p>
+    </header>
+
     <div class="cards-grid cards-grid--3">
       <% datos.principios.forEach(function(p) { %>
-        <div class="card card--principio">
-          <span class="card__icon"><%= p.icono %></span>
+        <article class="card card--principio">
+          <span class="card__icon" aria-hidden="true"><%= p.icono %></span>
           <h3><%= p.titulo %></h3>
           <p><%= p.descripcion %></p>
-        </div>
+        </article>
       <% }); %>
     </div>
   </div>
 </section>
 
+<!-- =========================================================
+     VALORES INSTITUCIONALES
+     ========================================================= -->
 <section class="section section--light">
   <div class="container">
-    <h2 class="section__title">Valores institucionales</h2>
+    <header class="section__header">
+      <span class="section__tag">Nuestros valores</span>
+      <h2 class="section__title">Valores institucionales</h2>
+      <p class="section__text">
+        Lo que nos define como equipo y como organización ante las comunidades.
+      </p>
+    </header>
+
     <div class="cards-grid cards-grid--3">
       <% datos.valores.forEach(function(v) { %>
-        <div class="card card--valor">
-          <span class="card__icon"><%= v.icono %></span>
+        <article class="card card--valor">
+          <span class="card__icon" aria-hidden="true"><%= v.icono %></span>
           <h3><%= v.nombre %></h3>
           <p><%= v.descripcion %></p>
-        </div>
+        </article>
       <% }); %>
     </div>
   </div>
 </section>
 
+<!-- =========================================================
+     MISIÓN / VISIÓN
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Hacia dónde vamos</span>
+      <h2 class="section__title">Misión y Visión</h2>
+    </header>
+
     <div class="mision-vision">
-      <div class="mv-card">
-        <h3>🎯 Misión</h3>
+      <article class="mv-card">
+        <h3>
+          <span aria-hidden="true">◎</span>
+          Misión
+        </h3>
         <p><%= datos.mision %></p>
-      </div>
-      <div class="mv-card">
-        <h3>🔭 Visión</h3>
+      </article>
+
+      <article class="mv-card">
+        <h3>
+          <span aria-hidden="true">◇</span>
+          Visión
+        </h3>
         <p><%= datos.vision %></p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- =========================================================
+     ENFOQUES DE TRABAJO
+     ========================================================= -->
 <section class="section section--dark">
   <div class="container">
-    <h2 class="section__title">Enfoques de trabajo</h2>
+    <header class="section__header">
+      <span class="section__tag">Cómo lo hacemos</span>
+      <h2 class="section__title">Enfoques de trabajo</h2>
+      <p class="section__text">
+        Nuestro marco conceptual y metodológico para acompañar a personas y comunidades.
+      </p>
+    </header>
+
     <p class="section__text center">
-      SAE Crecer en Bienestar desarrolla sus acciones desde un enfoque psicosocial, preventivo y humanizado, 
-      centrado en la persona, reconociendo sus contextos, experiencias y potencialidades. Promovemos el bienestar 
-      como un proceso continuo que se construye con conciencia, herramientas prácticas y acompañamiento profesional, 
-      fomentando la autonomía, la resiliencia y el fortalecimiento de vínculos saludables.
+      SAE Crecer en Bienestar desarrolla sus acciones desde un enfoque psicosocial, preventivo
+      y humanizado, centrado en la persona, reconociendo sus contextos, experiencias y
+      potencialidades. Promovemos el bienestar como un proceso continuo que se construye
+      con conciencia, herramientas prácticas y acompañamiento profesional, fomentando la
+      autonomía, la resiliencia y el fortalecimiento de vínculos saludables.
     </p>
   </div>
 </section>

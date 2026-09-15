@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Transparencia y Gestión Institucional</h1>
@@ -5,8 +8,21 @@
   </div>
 </section>
 
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Rendición de cuentas</span>
+      <h2 class="section__title">Información pública a tu disposición</h2>
+      <p class="section__text">
+        Como entidad sin ánimo de lucro, ponemos a disposición de la ciudadanía,
+        aliados y entes de control la información institucional que respalda
+        nuestra gestión y el uso responsable de los recursos.
+      </p>
+    </header>
+
     <div class="transparencia-grid">
       <% const documentos = [
         'Certificado de existencia y representación legal',
@@ -18,18 +34,61 @@
         'Canales de contacto',
         'Informes y resultados'
       ]; %>
+
       <% documentos.forEach(function(doc) { %>
         <div class="transparencia-item">
-          <span class="transparencia__icon">📄</span>
+          <span class="transparencia__icon" aria-hidden="true">📄</span>
           <span class="transparencia__nombre"><%= doc %></span>
           <span class="transparencia__estado">Disponible bajo solicitud</span>
         </div>
       <% }); %>
     </div>
-    <p class="section__text center mt-2">
-      Para solicitar cualquiera de estos documentos, escríbenos a 
-      <a href="mailto:<%= datos.correo %>"><%= datos.correo %></a> 
-      o a nuestro WhatsApp <strong><%= datos.whatsapp %></strong>.
+  </div>
+</section>
+
+<!-- =========================================================
+     SOLICITUD DE DOCUMENTOS
+     ========================================================= -->
+<section class="section section--light">
+  <div class="container">
+    <header class="section__header">
+      <span class="section__tag">¿Cómo solicitarlos?</span>
+      <h2 class="section__title">Escríbenos y te los enviamos</h2>
+      <p class="section__text">
+        Puedes solicitar cualquiera de estos documentos por nuestros canales oficiales.
+        Responderemos en un plazo máximo de 48 horas hábiles.
+      </p>
+    </header>
+
+    <div class="contacto-grid">
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">✉️</span>
+        <h3>Correo electrónico</h3>
+        <p>
+          <a href="mailto:<%= datos.correo %>"><%= datos.correo %></a>
+        </p>
+      </article>
+
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">📱</span>
+        <h3>WhatsApp</h3>
+        <p>
+          <a href="https://wa.me/57<%= datos.whatsapp %>"
+             target="_blank"
+             rel="noopener noreferrer"><%= datos.whatsapp %></a>
+        </p>
+      </article>
+
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">🏛️</span>
+        <h3>Sede</h3>
+        <p><%= datos.ciudad %></p>
+      </article>
+    </div>
+
+    <p class="nota">
+      La información aquí relacionada se publica en cumplimiento de la Ley 1712 de 2014
+      (Ley de Transparencia y del Derecho de Acceso a la Información Pública Nacional).
     </p>
   </div>
 </section>

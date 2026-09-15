@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Contáctanos</h1>
@@ -5,35 +8,143 @@
   </div>
 </section>
 
+<!-- =========================================================
+     CANALES DE CONTACTO
+     ========================================================= -->
 <section class="section">
   <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Canales directos</span>
+      <h2 class="section__title">Elige cómo prefieres escribirnos</h2>
+      <p class="section__text">
+        Respondemos todas las solicitudes en un máximo de 48 horas hábiles.
+      </p>
+    </header>
+
     <div class="contacto-grid">
-      <div class="contacto-card">
-        <span class="contacto__icon">📍</span>
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">📍</span>
         <h3>Ubicación</h3>
         <p><%= datos.ciudad %></p>
-      </div>
-      <div class="contacto-card">
-        <span class="contacto__icon">✉️</span>
+      </article>
+
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">✉️</span>
         <h3>Correo</h3>
-        <p><a href="mailto:<%= datos.correo %>"><%= datos.correo %></a></p>
-      </div>
-      <div class="contacto-card">
-        <span class="contacto__icon">📱</span>
+        <p>
+          <a href="mailto:<%= datos.correo %>"><%= datos.correo %></a>
+        </p>
+      </article>
+
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">📱</span>
         <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/57<%= datos.whatsapp %>" target="_blank" rel="noopener"><%= datos.whatsapp %></a></p>
-      </div>
-      <div class="contacto-card">
-        <span class="contacto__icon">📸</span>
+        <p>
+          <a href="https://wa.me/57<%= datos.whatsapp %>"
+             target="_blank"
+             rel="noopener noreferrer"><%= datos.whatsapp %></a>
+        </p>
+      </article>
+
+      <article class="contacto-card">
+        <span class="contacto__icon" aria-hidden="true">📸</span>
         <h3>Instagram</h3>
-        <p><a href="<%= datos.instagram %>" target="_blank" rel="noopener">@saecrecer</a></p>
-      </div>
+        <p>
+          <a href="<%= datos.instagram %>"
+             target="_blank"
+             rel="noopener noreferrer">@saecrecer</a>
+        </p>
+      </article>
     </div>
 
-    <div class="horario">
-      <h3>🕐 Horario de atención</h3>
+    <!-- Horario -->
+    <div class="horario mt-2">
+      <h3>Horario de atención</h3>
       <p>Lunes a viernes: 8:00 a.m. – 5:00 p.m.</p>
       <p>Respuesta a solicitudes en un máximo de 48 horas hábiles.</p>
     </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FORMULARIO DE CONTACTO
+     ========================================================= -->
+<section class="section section--light">
+  <div class="container form-container">
+    <header class="section__header">
+      <span class="section__tag">Escríbenos</span>
+      <h2 class="section__title">Cuéntanos en qué podemos ayudarte</h2>
+      <p class="section__text">
+        Completa el formulario y te responderemos a la mayor brevedad posible.
+      </p>
+    </header>
+
+    <form class="form"
+          action="/contacto"
+          method="POST"
+          novalidate>
+
+      <div class="form__row">
+        <div class="form__group">
+          <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+          <input type="text"
+                 id="nombre"
+                 name="nombre"
+                 placeholder="Ej: María González"
+                 autocomplete="name"
+                 required>
+        </div>
+
+        <div class="form__group">
+          <label for="correo">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
+          <input type="email"
+                 id="correo"
+                 name="correo"
+                 placeholder="tucorreo@ejemplo.com"
+                 autocomplete="email"
+                 required>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form__group">
+          <label for="telefono">Teléfono <span class="sr-only">(opcional)</span></label>
+          <input type="tel"
+                 id="telefono"
+                 name="telefono"
+                 placeholder="+57 300 000 0000"
+                 autocomplete="tel">
+        </div>
+
+        <div class="form__group">
+          <label for="asunto">Asunto <span class="req" aria-hidden="true">*</span></label>
+          <select id="asunto" name="asunto" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="informacion">Información general</option>
+            <option value="participar">Quiero participar</option>
+            <option value="alianza">Propuesta de alianza</option>
+            <option value="voluntariado">Voluntariado</option>
+            <option value="donacion">Donaciones</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form__group">
+        <label for="mensaje">Mensaje <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="mensaje"
+                  name="mensaje"
+                  placeholder="Cuéntanos brevemente en qué podemos ayudarte…"
+                  required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full">
+        Enviar mensaje
+      </button>
+
+      <p class="nota">
+        Al enviar aceptas nuestra política de tratamiento de datos personales.
+      </p>
+    </form>
   </div>
 </section>

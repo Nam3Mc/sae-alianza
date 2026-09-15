@@ -1,3 +1,6 @@
+<!-- =========================================================
+     PAGE HEADER
+     ========================================================= -->
 <section class="page-header">
   <div class="container">
     <h1>Participa / Solicita Acompañamiento</h1>
@@ -5,38 +8,124 @@
   </div>
 </section>
 
+<!-- =========================================================
+     INTRO — QUÉ PUEDES SOLICITAR
+     ========================================================= -->
 <section class="section">
+  <div class="container">
+    <header class="section__header">
+      <span class="section__tag">Antes de empezar</span>
+      <h2 class="section__title">Cuéntanos qué necesitas</h2>
+      <p class="section__text">
+        Este formulario es el primer paso para vincular tu comunidad, organización o proceso personal
+        a los programas de SAE Crecer en Bienestar. Lee la información de abajo y luego completa el formulario.
+      </p>
+    </header>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>1. Recibimos</strong>
+        Revisamos tu solicitud y la clasificamos según el tipo de acompañamiento requerido.
+      </div>
+      <div class="info-item">
+        <strong>2. Te contactamos</strong>
+        Nos comunicamos contigo en un máximo de 48 horas hábiles para ampliar la información.
+      </div>
+      <div class="info-item">
+        <strong>3. Articulamos</strong>
+        Diseñamos conjuntamente la ruta de acompañamiento o articulación más pertinente.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FORMULARIO
+     ========================================================= -->
+<section class="section section--light">
   <div class="container form-container">
-    <form action="#" method="POST" class="form" id="formParticipa">
+    <header class="section__header">
+      <span class="section__tag">Solicitud</span>
+      <h2 class="section__title">Completa el formulario</h2>
+      <p class="section__text">
+        Los campos marcados con <span class="req" aria-hidden="true">*</span> son obligatorios.
+      </p>
+    </header>
+
+    <form action="#"
+          method="POST"
+          class="form"
+          id="formParticipa"
+          novalidate>
+
       <div class="form__row">
         <div class="form__group">
-          <label for="nombre">Nombre completo *</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          <label for="nombre">
+            Nombre completo <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="text"
+                 id="nombre"
+                 name="nombre"
+                 placeholder="Tu nombre"
+                 autocomplete="name"
+                 required>
         </div>
+
         <div class="form__group">
-          <label for="organizacion">Organización / comunidad</label>
-          <input type="text" id="organizacion" name="organizacion" placeholder="Nombre de tu organización o comunidad">
+          <label for="organizacion">
+            Organización / comunidad <span class="sr-only">(opcional)</span>
+          </label>
+          <input type="text"
+                 id="organizacion"
+                 name="organizacion"
+                 placeholder="Nombre de tu organización o comunidad"
+                 autocomplete="organization">
         </div>
       </div>
+
       <div class="form__row">
         <div class="form__group">
-          <label for="correo">Correo electrónico *</label>
-          <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
+          <label for="correo">
+            Correo electrónico <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input type="email"
+                 id="correo"
+                 name="correo"
+                 placeholder="tucorreo@ejemplo.com"
+                 autocomplete="email"
+                 required>
         </div>
+
         <div class="form__group">
-          <label for="telefono">Teléfono / WhatsApp</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+          <label for="telefono">
+            Teléfono / WhatsApp <span class="sr-only">(opcional)</span>
+          </label>
+          <input type="tel"
+                 id="telefono"
+                 name="telefono"
+                 placeholder="+57 300 000 0000"
+                 autocomplete="tel">
         </div>
       </div>
+
       <div class="form__row">
         <div class="form__group">
-          <label for="ciudad">Ciudad / localidad</label>
-          <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Bogotá, Suba">
+          <label for="ciudad">
+            Ciudad / localidad <span class="sr-only">(opcional)</span>
+          </label>
+          <input type="text"
+                 id="ciudad"
+                 name="ciudad"
+                 placeholder="Ej: Bogotá, Suba"
+                 autocomplete="address-level2">
         </div>
+
         <div class="form__group">
-          <label for="necesidad">¿Qué necesitas? *</label>
+          <label for="necesidad">
+            ¿Qué necesitas? <span class="req" aria-hidden="true">*</span>
+          </label>
           <select id="necesidad" name="necesidad" required>
-            <option value="">Selecciona una opción</option>
+            <option value="" disabled selected>Selecciona una opción</option>
             <option value="acompañamiento-psicosocial">Acompañamiento psicosocial</option>
             <option value="talleres-formacion">Talleres y formación</option>
             <option value="programa-juvenil">Programa juvenil</option>
@@ -49,11 +138,25 @@
           </select>
         </div>
       </div>
+
       <div class="form__group">
-        <label for="mensaje">Cuéntanos más sobre tu necesidad</label>
-        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente lo que necesitas..."></textarea>
+        <label for="mensaje">
+          Cuéntanos más sobre tu necesidad <span class="sr-only">(opcional)</span>
+        </label>
+        <textarea id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  placeholder="Describe brevemente lo que necesitas…"></textarea>
       </div>
-      <button type="submit" class="btn btn--primary btn--full">Enviar solicitud</button>
+
+      <button type="submit" class="btn btn--primary btn--full">
+        Enviar solicitud
+      </button>
+
+      <p class="nota">
+        Al enviar aceptas nuestra política de tratamiento de datos personales
+        (Ley 1581 de 2012 – Colombia).
+      </p>
     </form>
   </div>
 </section>
