@@ -9,7 +9,7 @@
 </section>
 
 <!-- =========================================================
-     INTRO + DOCUMENTOS DESCARGABLES
+     INTRO + DOCUMENTOS DISPONIBLES BAJO SOLICITUD
      ========================================================= -->
 <section class="section">
   <div class="container">
@@ -21,36 +21,34 @@
         aliados y entes de control la información institucional que respalda
         nuestra gestión y el uso responsable de los recursos.
       </p>
+      <p class="section__text">
+        <strong>Para obtener los documentos, contacta a la organización.</strong>
+        Con gusto te los compartiremos por nuestros canales oficiales.
+      </p>
     </header>
 
     <%
-      /* ⚙️ Datos de documentos publicados.
-         ⚠️ El campo `archivo` DEBE coincidir exactamente con el nombre
-         del PDF dentro de /public/docs/ (incluye tildes y espacios). */
+      /* ⚙️ Documentos publicados.
+         Ya no se expone el campo `archivo` para evitar enlaces directos. */
       const documentos = [
         {
           nombre: 'Certificado de existencia y representación legal',
-          archivo: 'Certificado de existencia y representacion legal.pdf',
           tipo: 'PDF'
         },
         {
           nombre: 'Estatutos de la Corporación',
-          archivo: 'Estatutos Corporacion SAE Crecer En Bienestar.pdf',
           tipo: 'PDF'
         },
         {
           nombre: 'Informe de gestión inicial y planeación de actividades',
-          archivo: 'INFORME DE GESTIÓN INICIAL Y PLANEACIÓN DE ACTIVIDADES CORPORACIÓN SAE CRECER EN BIENESTAR.pdf',
           tipo: 'PDF'
         },
         {
           nombre: 'Balance de apertura 2026',
-          archivo: 'Balance de apertura 2026.pdf',
           tipo: 'PDF'
         },
         {
           nombre: 'Proyecto de presupuesto — Segundo semestre 2026',
-          archivo: 'Proyecto de Presupuesto Segundo Semestre 2026.pdf',
           tipo: 'PDF'
         }
       ];
@@ -63,23 +61,17 @@
             <span class="documento__badge" aria-hidden="true"><%= doc.tipo %></span>
             <div class="documento__info">
               <h3 class="documento__nombre"><%= doc.nombre %></h3>
-              <p class="documento__meta">Documento oficial · Descarga directa</p>
+              <p class="documento__meta">
+                Documento oficial · Disponible bajo solicitud
+              </p>
             </div>
           </div>
 
           <div class="documento__acciones">
             <a
-              href="/docs/<%= encodeURIComponent(doc.archivo) %>"
-              class="documento__accion documento__accion--ghost"
-              target="_blank"
-              rel="noopener noreferrer">
-              Ver
-            </a>
-            <a
-              href="/docs/<%= encodeURIComponent(doc.archivo) %>"
-              class="documento__accion documento__accion--solid"
-              download>
-              Descargar
+              href="mailto:<%= datos.correo %>?subject=<%= encodeURIComponent('Solicitud de documento: ' + doc.nombre) %>"
+              class="documento__accion documento__accion--solid">
+              Solicitar por correo
             </a>
           </div>
         </article>
@@ -87,8 +79,8 @@
     </div>
 
     <p class="nota">
-      Los documentos se actualizan periódicamente. Si necesitas versiones anteriores,
-      escríbenos por nuestros canales oficiales.
+      Los documentos no se descargan directamente desde esta página.
+      Para obtenerlos, escríbenos por nuestros canales oficiales y te los enviaremos.
     </p>
   </div>
 </section>
