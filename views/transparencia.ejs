@@ -9,7 +9,7 @@
 </section>
 
 <!-- =========================================================
-     INTRO
+     INTRO + DOCUMENTOS DESCARGABLES
      ========================================================= -->
 <section class="section">
   <div class="container">
@@ -23,26 +23,73 @@
       </p>
     </header>
 
-    <div class="transparencia-grid">
-      <% const documentos = [
-        'Certificado de existencia y representación legal',
-        'Estatutos',
-        'Informes de gestión',
-        'Programas y proyectos',
-        'Información financiera que legalmente corresponda publicar',
-        'Políticas institucionales',
-        'Canales de contacto',
-        'Informes y resultados'
-      ]; %>
+    <%
+      /* ⚙️ Datos de documentos publicados.
+         ⚠️ El campo `archivo` DEBE coincidir exactamente con el nombre
+         del PDF dentro de /public/docs/ (incluye tildes y espacios). */
+      const documentos = [
+        {
+          nombre: 'Certificado de existencia y representación legal',
+          archivo: 'Certificado de existencia y representacion legal.pdf',
+          tipo: 'PDF'
+        },
+        {
+          nombre: 'Estatutos de la Corporación',
+          archivo: 'Estatutos Corporacion SAE Crecer En Bienestar.pdf',
+          tipo: 'PDF'
+        },
+        {
+          nombre: 'Informe de gestión inicial y planeación de actividades',
+          archivo: 'INFORME DE GESTIÓN INICIAL Y PLANEACIÓN DE ACTIVIDADES CORPORACIÓN SAE CRECER EN BIENESTAR.pdf',
+          tipo: 'PDF'
+        },
+        {
+          nombre: 'Balance de apertura 2026',
+          archivo: 'Balance de apertura 2026.pdf',
+          tipo: 'PDF'
+        },
+        {
+          nombre: 'Proyecto de presupuesto — Segundo semestre 2026',
+          archivo: 'Proyecto de Presupuesto Segundo Semestre 2026.pdf',
+          tipo: 'PDF'
+        }
+      ];
+    %>
 
+    <div class="documentos-grid">
       <% documentos.forEach(function(doc) { %>
-        <div class="transparencia-item">
-          <span class="transparencia__icon" aria-hidden="true">📄</span>
-          <span class="transparencia__nombre"><%= doc %></span>
-          <span class="transparencia__estado">Disponible bajo solicitud</span>
-        </div>
+        <article class="documento">
+          <div class="documento__head">
+            <span class="documento__badge" aria-hidden="true"><%= doc.tipo %></span>
+            <div class="documento__info">
+              <h3 class="documento__nombre"><%= doc.nombre %></h3>
+              <p class="documento__meta">Documento oficial · Descarga directa</p>
+            </div>
+          </div>
+
+          <div class="documento__acciones">
+            <a
+              href="/docs/<%= encodeURIComponent(doc.archivo) %>"
+              class="documento__accion documento__accion--ghost"
+              target="_blank"
+              rel="noopener noreferrer">
+              Ver
+            </a>
+            <a
+              href="/docs/<%= encodeURIComponent(doc.archivo) %>"
+              class="documento__accion documento__accion--solid"
+              download>
+              Descargar
+            </a>
+          </div>
+        </article>
       <% }); %>
     </div>
+
+    <p class="nota">
+      Los documentos se actualizan periódicamente. Si necesitas versiones anteriores,
+      escríbenos por nuestros canales oficiales.
+    </p>
   </div>
 </section>
 

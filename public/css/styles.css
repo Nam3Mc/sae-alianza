@@ -209,6 +209,7 @@ main {
   border: 0;
 }
 
+
 /* =========================================================
    4. HEADER / NAVEGACIÓN
    ========================================================= */
@@ -223,6 +224,7 @@ main {
   transition: box-shadow var(--t-base), background var(--t-base);
   isolation: isolate;
 }
+
 .header.is-scrolled {
   box-shadow: var(--shadow-sm);
   background: rgba(255, 255, 255, 0.98);
@@ -249,12 +251,22 @@ main {
   position: relative;
   letter-spacing: -0.01em;
 }
-.header__logo-icon { font-size: 1.5rem; line-height: 1; }
+
+/* Imagen del logo (faltaba en el CSS original) */
+.header__logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .header__logo-text {
   display: flex;
   flex-direction: column;
   line-height: 1.15;
 }
+
 .header__logo-text small {
   font-size: 0.65rem;
   font-weight: 500;
@@ -282,15 +294,18 @@ main {
   white-space: nowrap;
   letter-spacing: 0.005em;
 }
+
 .nav__link:hover {
   background: var(--c-primary-soft);
   color: var(--c-primary-hover);
 }
+
 .nav__link.active {
   color: var(--c-primary-hover);
   background: var(--c-primary-soft);
   font-weight: 600;
 }
+
 .nav__link--cta {
   margin-left: var(--s-2);
   background: var(--c-primary);
@@ -299,12 +314,14 @@ main {
   padding-inline: 1.25rem;
   box-shadow: var(--shadow-sm);
 }
+
 .nav__link--cta:hover {
   background: var(--c-primary-hover);
   color: #fff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
+
 .nav__link--cta.active {
   background: var(--c-primary-hover);
   color: #fff;
@@ -325,7 +342,9 @@ main {
   flex-shrink: 0;
   transition: background-color var(--t-fast), box-shadow var(--t-fast);
 }
+
 .header__toggle:hover { background: var(--c-primary-soft); }
+
 .header__toggle span {
   position: absolute;
   left: 50%;
@@ -336,6 +355,7 @@ main {
   transform: translateX(-50%);
   transition: transform var(--t-base), opacity var(--t-fast), top var(--t-base);
 }
+
 .header__toggle span:nth-child(1) { top: 15px; }
 .header__toggle span:nth-child(2) { top: 21px; }
 .header__toggle span:nth-child(3) { top: 27px; }
@@ -344,22 +364,27 @@ main {
   background: var(--c-primary-soft);
   box-shadow: inset 0 0 0 1.5px var(--c-border);
 }
+
 .header__toggle[aria-expanded="true"]:hover {
   background: var(--c-accent-soft);
 }
+
 .header__toggle[aria-expanded="true"] span:nth-child(1) {
   top: 21px;
   transform: translateX(-50%) rotate(45deg);
 }
+
 .header__toggle[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
   transform: translateX(-50%) scaleX(0);
 }
+
 .header__toggle[aria-expanded="true"] span:nth-child(3) {
   top: 21px;
   transform: translateX(-50%) rotate(-45deg);
 }
 
+/* Overlay del menú móvil */
 .header__overlay {
   display: none;
   position: fixed;
@@ -371,9 +396,34 @@ main {
   opacity: 0;
   transition: opacity var(--t-base);
 }
+
 .header__overlay.is-visible {
   display: block;
   opacity: 1;
+}
+
+/* =========================================================
+   4.b NAV — COMPRESIÓN INTERMEDIA (1024 – 1279px)
+   Cierra la brecha donde el nav se cortaba.
+   ========================================================= */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header__container { gap: var(--s-3); }
+
+  .header__logo { font-size: var(--fs-base); }
+  .header__logo-img { width: 38px; height: 38px; border-radius: 8px; }
+  .header__logo-text small { font-size: 0.55rem; letter-spacing: 0.08em; }
+
+  .header__nav { gap: 0; }
+
+  .nav__link {
+    padding: 0.5rem 0.55rem;
+    font-size: 0.78rem;
+    letter-spacing: 0;
+  }
+  .nav__link--cta {
+    margin-left: 0.15rem;
+    padding-inline: 0.75rem;
+  }
 }
 
 /* =========================================================
@@ -474,6 +524,7 @@ main {
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
+/* --- Relleno verde --- */
 .btn--primary {
   background: var(--c-primary);
   color: var(--c-white);
@@ -486,42 +537,7 @@ main {
   box-shadow: var(--shadow-md);
 }
 
-.btn--outline {
-  background: transparent;
-  color: var(--c-primary-hover);
-  border-color: var(--c-primary);
-}
-.btn--outline:hover {
-  background: var(--c-primary);
-  color: var(--c-white);
-  border-color: var(--c-primary);
-}
-
-.btn--outline-light {
-  background: transparent;
-  color: var(--c-primary-hover);
-  border-color: var(--c-border-strong);
-}
-.btn--outline-light:hover {
-  background: var(--c-primary-soft);
-  color: var(--c-primary-hover);
-  border-color: var(--c-primary);
-}
-
-.btn--white {
-  background: var(--c-white);
-  color: var(--c-primary-hover);
-  border-color: var(--c-border);
-  box-shadow: var(--shadow-sm);
-}
-.btn--white:hover {
-  background: var(--c-primary-soft);
-  color: var(--c-primary-hover);
-  border-color: var(--c-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
+/* --- Relleno rosa --- */
 .btn--accent {
   background: var(--c-accent);
   color: var(--c-white);
@@ -530,6 +546,47 @@ main {
 .btn--accent:hover {
   background: var(--c-accent-hover);
   color: var(--c-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Outline para FONDOS OSCUROS o COLORIDOS (CTA verde, footer, hero oscuro) --- */
+.btn--outline {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--c-white);
+  color: var(--c-white);
+  transform: translateY(-2px);
+}
+
+/* --- Outline para FONDOS CLAROS (hero crema, secciones blancas) --- */
+.btn--outline-soft {
+  background: transparent;
+  color: var(--c-primary-hover);
+  border-color: var(--c-primary);
+}
+.btn--outline-soft:hover {
+  background: var(--c-primary);
+  color: var(--c-white);
+  border-color: var(--c-primary);
+  transform: translateY(-2px);
+}
+
+/* --- Relleno blanco (para fondos coloreados) --- */
+.btn--white {
+  background: var(--c-white);
+  color: var(--c-primary-hover);
+  border-color: var(--c-white);
+  box-shadow: var(--shadow-sm);
+}
+.btn--white:hover {
+  background: var(--c-primary-soft);
+  color: var(--c-primary-hover);
+  border-color: var(--c-primary-soft);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -971,42 +1028,54 @@ main {
 }
 
 /* =========================================================
-   15. TRANSPARENCIA
+   15. TRANSPARENCIA — grid interno robusto
    ========================================================= */
 .transparencia-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
   gap: var(--s-5);
 }
+
 .transparencia-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;   /* icono | nombre | badge */
   align-items: center;
   gap: var(--s-4);
   padding: var(--s-5) var(--s-6);
   background: var(--c-white);
   border: 1px solid var(--c-border);
   border-radius: var(--r-md);
-  transition: background-color var(--t-base), border-color var(--t-base),
-              transform var(--t-fast), box-shadow var(--t-base);
+  transition: border-color var(--t-base), transform var(--t-fast),
+              box-shadow var(--t-base);
 }
+
 .transparencia-item:hover {
   border-color: var(--c-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
+
 .transparencia__icon {
   font-size: 1.5rem;
   line-height: 1;
   flex-shrink: 0;
+  /* alineado arriba si el nombre ocupa varias líneas */
+  align-self: start;
+  margin-top: 2px;
 }
+
 .transparencia__nombre {
-  flex: 1 1 auto;
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--c-text);
+  line-height: 1.55;
+  /* 🔑 claves para que el texto nunca desborde */
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
+
 .transparencia__estado {
-  flex-shrink: 0;
   font-size: 0.7rem;
   font-weight: 600;
   color: var(--c-accent-hover);
@@ -1016,7 +1085,31 @@ main {
   white-space: nowrap;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
+
+
+
+/* --- Móvil: el badge baja debajo del nombre --- */
+@media (max-width: 640px) {
+  .transparencia-item {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    row-gap: var(--s-3);
+    padding: var(--s-5);
+  }
+  .transparencia__icon { grid-row: 1; grid-column: 1; }
+  .transparencia__nombre { grid-row: 1; grid-column: 2; }
+  .transparencia__estado {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: start;
+    white-space: normal;   /* ya no forzamos una sola línea */
+    text-align: left;
+  }
+}
+
+
 
 /* =========================================================
    16. CONTACTO
@@ -1382,4 +1475,131 @@ main {
   .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
   a { color: #000; text-decoration: underline; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 0.85em; color: #555; }
+}
+
+
+/* =========================================================
+   15.b DOCUMENTOS DESCARGABLES
+   ========================================================= */
+.documentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: var(--s-5);
+}
+
+.documento {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-6);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t-base), box-shadow var(--t-base),
+              transform var(--t-fast);
+}
+.documento:hover {
+  border-color: var(--c-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.documento__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-4);
+}
+
+/* Badge "PDF" en lugar de emoji — más limpio y profesional */
+.documento__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: var(--r-sm);
+  background: var(--c-accent-soft);
+  color: var(--c-accent-hover);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.documento__info {
+  flex: 1 1 auto;
+  min-width: 0;             /* 🔑 evita desbordes */
+}
+
+.documento__nombre {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-ink);
+  line-height: 1.45;
+  margin: 0 0 var(--s-1);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.documento__meta {
+  font-size: var(--fs-xs);
+  color: var(--c-text-subtle);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.documento__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: auto;         /* empuja los botones al fondo de la card */
+  padding-top: var(--s-2);
+}
+
+/* Acciones estilo "link-button" minimalista */
+.documento__accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--t-fast), color var(--t-fast),
+              border-color var(--t-fast), transform var(--t-fast);
+}
+
+.documento__accion--ghost {
+  background: transparent;
+  color: var(--c-primary-hover);
+  border-color: var(--c-border-strong);
+}
+.documento__accion--ghost:hover {
+  background: var(--c-primary-soft);
+  border-color: var(--c-primary);
+  color: var(--c-primary-hover);
+}
+
+.documento__accion--solid {
+  background: var(--c-primary);
+  color: var(--c-white);
+  border-color: var(--c-primary);
+}
+.documento__accion--solid:hover {
+  background: var(--c-primary-hover);
+  border-color: var(--c-primary-hover);
+  color: var(--c-white);
+  transform: translateY(-1px);
+}
+
+/* --- Móvil: apilar botones a lo ancho --- */
+@media (max-width: 560px) {
+  .documento { padding: var(--s-5); }
+  .documento__acciones { flex-direction: column; }
+  .documento__accion { width: 100%; }
 }
